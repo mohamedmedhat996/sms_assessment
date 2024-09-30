@@ -1,0 +1,833 @@
+{
+	"info": {
+		"_postman_id": "93e6d0f6-44c3-433e-9936-c7e538ceacd1",
+		"name": "SMS APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27858847",
+		"_collection_link": "https://ss-microservices.postman.co/workspace/ss-microservices~06ce65b8-88e6-4030-8444-1a70c3cf5589/collection/27858847-93e6d0f6-44c3-433e-9936-c7e538ceacd1?action=share&source=collection_link&creator=27858847"
+	},
+	"item": [
+		{
+			"name": "Create User (Just For Test)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"mmedhat\",\r\n    \"password\": \"MM1234\",\r\n    \"email\": \"mmedhat@sms.com\",\r\n    \"role\": \"client\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7878/api/user/create",
+					"host": [
+						"localhost"
+					],
+					"port": "7878",
+					"path": [
+						"api",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create User (Just For Test)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"mmedhat\",\r\n    \"password\": \"MM1234\",\r\n    \"email\": \"mmedhat@sms.com\",\r\n    \"role\": \"client\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7878/api/user/create",
+							"host": [
+								"localhost"
+							],
+							"port": "7878",
+							"path": [
+								"api",
+								"user",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Sep 2024 07:32:26 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"username\": \"mmedhat\",\n    \"password\": \"$2a$10$Pw7WmSJBT6U/PH5hdflw7.HSAaz4vCFhK076phzTEtAVgLqrCuHIS\",\n    \"email\": \"mmedhat@sms.com\",\n    \"role\": \"client\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login (Get Access Token)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"mmedhat\",\r\n    \"password\": \"MM1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7878/api/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "7878",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login (Get Access Token)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"mmedhat\",\r\n    \"password\": \"MM1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7878/api/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "7878",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Sep 2024 07:34:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiY2xpZW50IiwidXNlck5hbWUiOiJtbWVkaGF0IiwiZW1haWwiOiJtbWVkaGF0QHNtcy5jb20iLCJpYXQiOjE3Mjc2ODE2NDQsImV4cCI6MTcyNzY4MTk0NH0.L8Us8Gz5_HYcvvQ45hLDgpN3PRdaDk1777ks6J1AossAmcPEoVv64CEE6RPEu1VJ\",\n    \"refreshToken\": \"eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiY2xpZW50IiwidXNlck5hbWUiOiJtbWVkaGF0IiwiZW1haWwiOiJtbWVkaGF0QHNtcy5jb20iLCJpYXQiOjE3Mjc2ODE2NDQsImV4cCI6MTcyNzY4MjI0NH0.bR0Dic5n5XyRxijgUI0VJBKkIK-q0XyRCDEZq9AZxczB6yQbAaELU7MOb7bRrPM3\",\n    \"email\": \"mmedhat@sms.com\",\n    \"expiryDate\": \"2024-09-30T07:39:04.263+00:00\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Refresh Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiY2xpZW50IiwidXNlck5hbWUiOiJtbWVkaGF0IiwiZW1haWwiOiJtbWVkaGF0QHNtcy5jb20iLCJpYXQiOjE3Mjc2ODE2NDQsImV4cCI6MTcyNzY4MTk0NH0.L8Us8Gz5_HYcvvQ45hLDgpN3PRdaDk1777ks6J1AossAmcPEoVv64CEE6RPEu1VJ\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7878/api/user/refresh",
+					"host": [
+						"localhost"
+					],
+					"port": "7878",
+					"path": [
+						"api",
+						"user",
+						"refresh"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Refresh Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiY2xpZW50IiwidXNlck5hbWUiOiJtbWVkaGF0IiwiZW1haWwiOiJtbWVkaGF0QHNtcy5jb20iLCJpYXQiOjE3Mjc2ODE2NDQsImV4cCI6MTcyNzY4MTk0NH0.L8Us8Gz5_HYcvvQ45hLDgpN3PRdaDk1777ks6J1AossAmcPEoVv64CEE6RPEu1VJ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7878/api/user/refresh",
+							"host": [
+								"localhost"
+							],
+							"port": "7878",
+							"path": [
+								"api",
+								"user",
+								"refresh"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Sep 2024 07:35:26 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiY2xpZW50IiwidXNlck5hbWUiOiJtbWVkaGF0IiwiZW1haWwiOiJtbWVkaGF0QHNtcy5jb20iLCJpYXQiOjE3Mjc2ODE3MjYsImV4cCI6MTcyNzY4MjAyNn0.gOjr7gDNh4PWYdlG9O89fEBlCBqSeu2Gh44LVGvERclQrAscce6UMWK8uc-9O91l\",\n    \"refreshToken\": \"eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiY2xpZW50IiwidXNlck5hbWUiOiJtbWVkaGF0IiwiZW1haWwiOiJtbWVkaGF0QHNtcy5jb20iLCJpYXQiOjE3Mjc2ODE2NDQsImV4cCI6MTcyNzY4MTk0NH0.L8Us8Gz5_HYcvvQ45hLDgpN3PRdaDk1777ks6J1AossAmcPEoVv64CEE6RPEu1VJ\",\n    \"email\": \"mmedhat@sms.com\",\n    \"expiryDate\": \"2024-09-30T07:40:26.736+00:00\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Course (Just For Test)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiY2xpZW50IiwidXNlck5hbWUiOiJtbWVkaGF0IiwiZW1haWwiOiJtbWVkaGF0QHNtcy5jb20iLCJpYXQiOjE3Mjc2ODM5MDYsImV4cCI6MTcyNzY4NDIwNn0.499JeELw8rpcGl0TXLlx-MEXuU5XcoH2w6V0LtTEmQkvH8XmazBITCTKeif5xP7s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"courseName\": \"Spring Boot Masterclass\",\r\n    \"description\": \"Learn Spring Boot in-depth\",\r\n    \"credits\": 400,\r\n    \"instructor\": \"John Doe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7878/api/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7878",
+					"path": [
+						"api",
+						"courses"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Course (Just For Test)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseName\": \"Spring Boot Masterclass\",\r\n    \"description\": \"Learn Spring Boot in-depth\",\r\n    \"credits\": 400,\r\n    \"instructor\": \"John Doe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7878/api/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7878",
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Sep 2024 08:12:03 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"courseName\": \"Spring Boot Masterclass\",\n    \"description\": \"Learn Spring Boot in-depth\",\n    \"credits\": 400,\n    \"instructor\": \"John Doe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Courses (Cached)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiY2xpZW50IiwidXNlck5hbWUiOiJtbWVkaGF0IiwiZW1haWwiOiJtbWVkaGF0QHNtcy5jb20iLCJpYXQiOjE3Mjc2ODQyNjIsImV4cCI6MTcyNzY4NDU2Mn0.6caGxodM9jmuioNpDLlfeqmeqjFB2AmFcyjI5ULi5FoZl1PEhQhrCbCr1oea_F4-",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7878/api/courses",
+					"host": [
+						"localhost"
+					],
+					"port": "7878",
+					"path": [
+						"api",
+						"courses"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Courses",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7878/api/courses",
+							"host": [
+								"localhost"
+							],
+							"port": "7878",
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Sep 2024 08:19:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"courseName\": \"Spring Boot Masterclass\",\n        \"description\": \"Learn Spring Boot in-depth\",\n        \"credits\": 400,\n        \"instructor\": \"John Doe\"\n    },\n    {\n        \"id\": 2,\n        \"courseName\": \"Introduction to Microsoft Excel\",\n        \"description\": \"Create an Excel spreadsheet and learn how to maneuver around the spreadsheet for data entry.\",\n        \"credits\": 800,\n        \"instructor\": \"Summer Scaggs\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Register to Course",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiY2xpZW50IiwidXNlck5hbWUiOiJtbWVkaGF0IiwiZW1haWwiOiJtbWVkaGF0QHNtcy5jb20iLCJpYXQiOjE3Mjc2ODQyNjIsImV4cCI6MTcyNzY4NDU2Mn0.6caGxodM9jmuioNpDLlfeqmeqjFB2AmFcyjI5ULi5FoZl1PEhQhrCbCr1oea_F4-",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7878/api/courses/2/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7878",
+					"path": [
+						"api",
+						"courses",
+						"2",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register to Course",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7878/api/courses/2/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7878",
+							"path": [
+								"api",
+								"courses",
+								"2",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Sep 2024 08:17:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Successfully registered to the course."
+				}
+			]
+		},
+		{
+			"name": "Cancel Course Registration",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiY2xpZW50IiwidXNlck5hbWUiOiJtbWVkaGF0IiwiZW1haWwiOiJtbWVkaGF0QHNtcy5jb20iLCJpYXQiOjE3Mjc2ODQyNjIsImV4cCI6MTcyNzY4NDU2Mn0.6caGxodM9jmuioNpDLlfeqmeqjFB2AmFcyjI5ULi5FoZl1PEhQhrCbCr1oea_F4-",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7878/api/courses/2/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7878",
+					"path": [
+						"api",
+						"courses",
+						"2",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Cancel Course Registration",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7878/api/courses/2/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7878",
+							"path": [
+								"api",
+								"courses",
+								"2",
+								"cancel"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Sep 2024 08:45:29 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Course registration cancelled."
+				}
+			]
+		},
+		{
+			"name": "Get Course Schedule PDF (Cached)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiY2xpZW50IiwidXNlck5hbWUiOiJtbWVkaGF0IiwiZW1haWwiOiJtbWVkaGF0QHNtcy5jb20iLCJpYXQiOjE3Mjc2ODU5MTYsImV4cCI6MTcyNzY4NjIxNn0.gym5nyL925Db1OEMpInf9YN8IuEfq__uhBz3vshmLfoAiqtUz43ARofV5EqtBeoz",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7878/api/courses/1/schedule",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7878",
+					"path": [
+						"api",
+						"courses",
+						"1",
+						"schedule"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Course Schedule PDF",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7878/api/courses/2/schedule",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7878",
+							"path": [
+								"api",
+								"courses",
+								"2",
+								"schedule"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": [],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
