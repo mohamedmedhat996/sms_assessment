@@ -470,7 +470,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiY2xpZW50IiwidXNlck5hbWUiOiJtbWVkaGF0IiwiZW1haWwiOiJtbWVkaGF0QHNtcy5jb20iLCJpYXQiOjE3Mjc2ODQyNjIsImV4cCI6MTcyNzY4NDU2Mn0.6caGxodM9jmuioNpDLlfeqmeqjFB2AmFcyjI5ULi5FoZl1PEhQhrCbCr1oea_F4-",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiY2xpZW50IiwidXNlck5hbWUiOiJtbWVkaGF0IiwiZW1haWwiOiJtbWVkaGF0QHNtcy5jb20iLCJpYXQiOjE3Mjc2OTM0MDcsImV4cCI6MTcyNzY5MzcwN30.sTc4pQsXCocsELTettZ-EvOFOzsLSykNHP28RT2DnMg6z3gMR9X2qKU0I5ZR9I9t",
 							"type": "string"
 						}
 					]
@@ -491,7 +491,7 @@
 			},
 			"response": [
 				{
-					"name": "Get All Courses",
+					"name": "Get All Courses (Cached)",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
@@ -545,7 +545,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Mon, 30 Sep 2024 08:19:17 GMT"
+							"value": "Mon, 30 Sep 2024 10:50:22 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -557,7 +557,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\n    {\n        \"id\": 1,\n        \"courseName\": \"Spring Boot Masterclass\",\n        \"description\": \"Learn Spring Boot in-depth\",\n        \"credits\": 400,\n        \"instructor\": \"John Doe\"\n    },\n    {\n        \"id\": 2,\n        \"courseName\": \"Introduction to Microsoft Excel\",\n        \"description\": \"Create an Excel spreadsheet and learn how to maneuver around the spreadsheet for data entry.\",\n        \"credits\": 800,\n        \"instructor\": \"Summer Scaggs\"\n    }\n]"
+					"body": "[\n    {\n        \"id\": 1,\n        \"courseName\": \"Spring Boot Masterclass\",\n        \"description\": \"Learn Spring Boot in-depth\",\n        \"credits\": 400,\n        \"instructor\": \"John Doe\",\n        \"registered\": false,\n        \"registeredAt\": null,\n        \"canceledAt\": null\n    },\n    {\n        \"id\": 2,\n        \"courseName\": \"Introduction to Microsoft Excel\",\n        \"description\": \"Create an Excel spreadsheet and learn how to maneuver around the spreadsheet for data entry.\",\n        \"credits\": 800,\n        \"instructor\": \"Summer Scaggs\",\n        \"registered\": false,\n        \"registeredAt\": null,\n        \"canceledAt\": \"2024-09-30T08:45:29.454+00:00\"\n    }\n]"
 				}
 			]
 		},

@@ -1,5 +1,6 @@
 package bb.ta.sms.serviceImpl;
 
+import bb.ta.sms.dto.CourseDto;
 import bb.ta.sms.exception.BaseException;
 import bb.ta.sms.model.Course;
 import bb.ta.sms.model.CourseRegistration;
@@ -18,6 +19,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 import java.io.ByteArrayOutputStream;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -30,9 +32,37 @@ public class CourseServiceImpl implements CourseService {
     private final UserRepository userRepository;
 
     @Override
-    @Cacheable(cacheNames = "courses", key = "'getAllCourses'")
-    public List<Course> getAllCourses() {
-        return courseRepository.findAll();
+    @Cacheable(cacheNames = "courses", key = "'getAllCourses_' + #userName")
+    public List<CourseDto> getAllCourses(String userName) {
+        User currentUser = userRepository.findByUsername(userName)
+                .orElseThrow(() -> new BaseException("User not found"));
+        List<Course> courses = courseRepository.findAll();
+        List<CourseDto> courseDtos = new ArrayList<>();
+        for (Course course : courses) {
+            CourseRegistration registration = registrationCourseRepository.findByUserAndCourse(currentUser, course).orElse(null);
+
+            CourseDto courseDto = new CourseDto();
+            courseDto.setId(course.getId());
+            courseDto.setCourseName(course.getCourseName());
+            courseDto.setDescription(course.getDescription());
+            courseDto.setCredits(course.getCredits());
+            courseDto.setInstructor(course.getInstructor());
+
+            if (registration != null) {
+                if (registration.getCanceledAt() == null){
+                    courseDto.setRegistered(true);
+                    courseDto.setRegisteredAt(registration.getRegisteredAt());
+                } else {
+                    courseDto.setRegistered(false);
+                    courseDto.setCanceledAt(registration.getCanceledAt());
+                }
+            } else {
+                courseDto.setRegistered(false);
+            }
+            courseDtos.add(courseDto);
+        }
+
+        return courseDtos;
     }
 
     @Override
@@ -56,6 +86,7 @@ public class CourseServiceImpl implements CourseService {
                 throw new BaseException("This user registered before on this Course");
             } else {
                 existingRegistration.setCanceledAt(null);
+                existingRegistration.setRegisteredAt(new Timestamp(System.currentTimeMillis()));
                 registrationCourseRepository.save(existingRegistration);
             }
         } else {
@@ -82,6 +113,7 @@ public class CourseServiceImpl implements CourseService {
     @Override
     @Cacheable(cacheNames = "courses", key = "'generateCourseSchedulePdf_' + #courseId")
     public byte[] generateCourseSchedulePdf(Long courseId) {
+
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new BaseException("Course not found with ID: " + courseId));
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

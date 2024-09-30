@@ -1,5 +1,6 @@
 package bb.ta.sms.controller;
 
+import bb.ta.sms.dto.CourseDto;
 import bb.ta.sms.model.Course;
 import bb.ta.sms.service.CourseService;
 import bb.ta.sms.util.SecurityContextUtil;
@@ -8,6 +9,7 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
 
 @RestController
@@ -18,8 +20,9 @@ public class CourseController {
 
 
     @GetMapping("courses")
-    public ResponseEntity<?> getAllCourses() {
-        return ResponseEntity.ok(courseService.getAllCourses());
+    public ResponseEntity<List<CourseDto>> getAllCourses() {
+        String userName = SecurityContextUtil.getCurrentUsername();
+        return ResponseEntity.ok(courseService.getAllCourses(userName));
     }
 
     @PostMapping("courses")
